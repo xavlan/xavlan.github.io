@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Blue</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+    <script src="js/ajax.js" defer></script>
+    <script src="js/table.js" defer></script>
+</head>
+<body class="hidden">
+    <header>
+        <h1>
+            <img src="img/grandblue.jpeg" alt="logo" width="150" height="150">
+            Grand Blue : <small>Gestion des Profils de Plongée</small>
+            <a href="connexion.html" class="admin-button"><img src="img/admin.png" alt="Admin"></a>
+            <a href="about_us.html" class="about_us-button"><img src="img/about_us.png" alt="about us"></a>
+        </h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="navbutton">Accueil</a></li>
+            <li><a href="tables_plongee.html" class="navbutton">Tables et profil de Plongée</a></li>
+            <li><a href="saisie.html" class="navbutton">Saisie des Paramètres</a></li>
+        </ul>
+    </nav>
+
+    <div id="tables" class="center-section">
+        <div class="flex-container">
+            <div class="table-container">
+                <div class="title-container">
+                    <select id="select-table"></select>
+                    <div class="table-title">Configuration initiale de plongée</div>
+                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Vitesse de descente</td>
+                            <td>20 m/min</td>
+                        </tr>
+                        <tr>
+                            <td>Vitesse de remontée</td>
+                            <td>10 m/min</td>
+                        </tr>
+                        <tr>
+                            <td>Bouteille</td>
+                            <td>15 l</td>
+                        </tr>
+                        <tr>
+                            <td>Pression bouteille</td>
+                            <td>200 b</td>
+                        </tr>
+                        <tr>
+                            <td>Respiration</td>
+                            <td>20 l/min</td>
+                        </tr>
+                        <tr>
+                            <td>Table Mn90</td>
+                            <td>
+                                <a href="img/MN90.pdf" target="_blank">PDF</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-container" id="saisie">
+        <h2>Enregistrement d'un nouveau profil</h2>
+        <form id="param-form">
+            <div class="input-field">
+                <input type="text" spellcheck="false" id="nom" name="nom" required>
+                <label for="nom">Nom du profil:</label>
+            </div>
+
+            <div class="input-field">
+                <input type="number" spellcheck="false" id="vitesse-descente" name="vitesse-descente" required>
+                <label for="vitesse-descente">Vitesse de descente (m/min):</label>
+            </div>
+
+            <div class="input-field">
+                <input type="number" spellcheck="false" id="vitesse-remontee" name="vitesse-remontee" required>
+                <label for="vitesse-remontee">Vitesse de remontée (m/min):</label>
+            </div>
+
+            <div class="input-field">
+                <input type="number" spellcheck="false" id="bouteille" name="bouteille" required>
+                <label for="bouteille">Bouteille (l):</label>
+            </div>
+
+            <div class="input-field">
+                <input type="number" spellcheck="false" id="pression-bouteille" name="pression-bouteille" required>
+                <label for="pression-bouteille">Pression bouteille (b):</label>
+            </div>
+
+            <div class="input-field">
+                <input type="number" spellcheck="false" id="respiration" name="respiration" required>
+                <label for="respiration">Respiration (l/min):</label>
+            </div>
+
+            <button class="button-78" type="submit">Enregistrer</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Grand Blue Gestion de Plongée</p>
+    </footer>
+
+    <script>
+        /*permet de éviter les fuites de style ou l'utilisateur pourrait voir pendant quelques secondes la page sans style css,
+         pour cela il suffit juste de cacher le body le temps de charger le css.*/
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
